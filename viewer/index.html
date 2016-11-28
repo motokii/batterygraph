@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+            // Visualization API と折れ線グラフ用のパッケージのロード
+            google.load("visualization", "1", {packages:["corechart"]});
+        </script>
+        <script type="text/javascript" src="./js/index.js"></script>
+    </head>
+    <body>
+        <div id="btn_area">
+            <input type="button" value="バッテリー残量" id="current_battery_btn" onClick="onCurrentClicked()"/>
+            <input type="button" value="最大バッテリー容量" id="max_battery_btn" onClick="onMaxClicked()"/>
+            <input type="button" value="充放電回数" id="cycle_battery_btn" onClick="onCycleClicked()"/>
+        </div>
+        <!-- グラフを描く div 要素 -->
+        <div id="chart_div" style="width: 80%; height: 400px;"></div>
+    </body>
+</html>
