@@ -1,6 +1,8 @@
 # Battery Graph
 バッテリのログを記録し、バッテリ容量の変化をグラフに表示
 
+<img src=https://raw.githubusercontent.com/motokii/batterygraph/images/images/screenshot.png width=500px>
+
 ## インストール
 git clone する
 
