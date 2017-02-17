@@ -1,0 +1,10 @@
+#compdef batterygraph
+
+_batterygraph() {
+  _values \
+    'option' \
+    'load[load to launchctl]' \
+    'unload[unload from launchctl]' \
+    'status[show logger status]' \
+    'show[show battery graph]'
+}
