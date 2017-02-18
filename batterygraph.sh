@@ -12,14 +12,15 @@ abs_dirname() {
   pwd -P
   cd "$cwd"
 }
-script_dir="$(abs_dirname "$0")"
+SCRIPT_DIR="$(abs_dirname "$0")"
 LABEL="motokii.batterylogger"
-PLIST_FILE="${script_dir}/src/plist/${LABEL}.plist"
+PLIST_FILE="${SCRIPT_DIR}/src/plist/${LABEL}.plist"
 LOADED_PLIST_FILE="${HOME}/Library/LaunchAgents/${LABEL}.plist"
-cd $script_dir
+LOG_FILE="${SCRIPT_DIR}/log/batterylog.csv"
+cd $SCRIPT_DIR
 
 function load {
-  ${script_dir}/src/plist/creater.sh
+  ${SCRIPT_DIR}/src/plist/creater.sh
   echo "loading ${LOADED_PLIST_FILE}"
   ln -s $PLIST_FILE $LOADED_PLIST_FILE
   launchctl load $LOADED_PLIST_FILE
@@ -36,7 +37,12 @@ function showstatus {
 }
 
 function showgraph {
-  ruby ${script_dir}/src/viewer_console/view.rb
+  ruby ${SCRIPT_DIR}/src/viewer_console/view.rb
+}
+
+function writelog {
+  echo "writed >> ${LOG_FILE}"
+  ruby ${SCRIPT_DIR}/src/logger/writelog.rb
 }
 
 function batterygraph {
@@ -52,6 +58,9 @@ function batterygraph {
 
     "show" )
       showgraph ;;
+
+    "write" )
+      writelog ;;
   esac
 }
 
