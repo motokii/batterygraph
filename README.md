@@ -22,9 +22,14 @@ ln -s $(pwd)/batterygraph/completion/_batterygraph /usr/local/share/zsh-completi
 
 ## 使い方
 
-launchd にロードする(ロギングを開始する)
+launchd にロードする(10分毎にログに記録される)
 ``` sh
 batterygraph load
+```
+
+現在のバッテリー状況をログに記録する
+``` sh
+batterygraph write
 ```
 
 バッテリのグラフを見る
