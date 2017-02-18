@@ -15,7 +15,7 @@ git clone https://github.com/motokii/batterygraph.git
 ln -s $(pwd)/batterygraph/batterygraph.sh ~/.local/bin/batterygraph
 ```
 
-補完ファイルをパスの取った場所にリンクを貼る
+補完ファイルをパスの通った場所にリンクを貼る
 ``` sh
 ln -s $(pwd)/batterygraph/completion/_batterygraph /usr/local/share/zsh-completions/_batterygraph
 ```
