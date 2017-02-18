@@ -22,7 +22,7 @@ ln -s $(pwd)/batterygraph/completion/_batterygraph /usr/local/share/zsh-completi
 
 ## 使い方
 
-launchctl にロードする(ロギングを開始する)
+launchd にロードする(ロギングを開始する)
 ``` sh
 batterygraph load
 ```
@@ -32,7 +32,22 @@ batterygraph load
 batterygraph show
 ```
 
+launchd からアンロードする(ロギングを終了する)
+``` sh
+batterygraph unload
+```
+
+launchd での状況を確認する
+``` sh
+batterygraph status
+```
+
 ## アンインストール
+
+終了しておく
+``` sh
+batterygraph unload
+```
 
 実行ファイルのリンクを削除
 ``` sh
