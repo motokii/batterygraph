@@ -6,5 +6,6 @@ _batterygraph() {
     'load[load to launchctl]' \
     'unload[unload from launchctl]' \
     'status[show logger status]' \
-    'show[show battery graph]'
+    'show[show battery graph]' \
+    'write[record the current battery status]'
 }
