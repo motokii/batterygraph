@@ -10,12 +10,12 @@
 git clone https://github.com/motokii/batterygraph.git
 ```
 
-実行ファイルをパスの通った場所にリンクを貼る
+パス($path)の通った場所に実行ファイルのリンクを貼る
 ``` sh
 ln -s $(pwd)/batterygraph/batterygraph.sh ~/.local/bin/batterygraph
 ```
 
-補完ファイルをパスの通った場所にリンクを貼る
+パス($fpath)の通った場所に補完ファイルのリンクを貼る
 ``` sh
 ln -s $(pwd)/batterygraph/completion/_batterygraph /usr/local/share/zsh-completions/_batterygraph
 ```
