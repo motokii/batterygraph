@@ -3,7 +3,7 @@
 
 <img src=https://raw.githubusercontent.com/motokii/batterygraph/images/images/screenshot.png width=500px>
 
-## Install
+## インストール
 
 好きな場所でgit clone する
 ``` sh
@@ -20,7 +20,7 @@ ln -s $(pwd)/batterygraph/batterygraph.sh ~/.local/bin/batterygraph
 ln -s $(pwd)/batterygraph/completion/_batterygraph /usr/local/share/zsh-completions/_batterygraph
 ```
 
-## Usage
+## 使い方
 
 launchd にロードする(10分毎にログに記録される)
 ``` sh
@@ -47,7 +47,7 @@ launchd での状況を確認する
 batterygraph status
 ```
 
-## Uninstall
+## アンインストール
 
 終了しておく
 ``` sh
