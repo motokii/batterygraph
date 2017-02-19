@@ -5,14 +5,14 @@
 
 ## インストール
 
-## Homebrewでインストール
+### Homebrewでインストール
 
 ``` sh
 brew tap motokii/batterygraph
 brew install batterygraph
 ```
 
-## 手動でインストール
+### 手動でインストール
 好きな場所でgit clone する
 ``` sh
 git clone https://github.com/motokii/batterygraph.git
