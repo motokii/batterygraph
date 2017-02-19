@@ -1,80 +1,81 @@
 # Battery Graph
-バッテリのログを記録し、バッテリ容量の変化をグラフに表示
+[日本語ページ](README.ja.md)
+
+Record the battery log, and display the battery capacity on the graph.
 
 <img src=https://raw.githubusercontent.com/motokii/batterygraph/images/images/screenshot.png width=500px>
 
 ## Install
 
-### Homebrewでインストール
+### Install from Homebrew
 
 ``` sh
 brew tap motokii/batterygraph
 brew install batterygraph
 ```
 
-### 手動でインストール
-好きな場所でgit clone する
+### Install manually
+Clone the repository
 ``` sh
 git clone https://github.com/motokii/batterygraph.git
 ```
-
-パス($path)の通った場所に実行ファイルのリンクを貼る
+Make symbolic link to batterygraph in $path
 ``` sh
 ln -s $(pwd)/batterygraph/src/batterygraph ~/.local/bin/batterygraph
 ```
 
-パス($fpath)の通った場所に補完ファイルのリンクを貼る
+Make symbolic link to complation file in $fpath
 ``` sh
 ln -s $(pwd)/batterygraph/completion/_batterygraph /usr/local/share/zsh-completions/_batterygraph
 ```
 
 ## Usage
 
-launchd にロードする(10分毎にログに記録される)
+Load to launchd (logged every ten minutes)
 ``` sh
 batterygraph load
 ```
 
-現在のバッテリー状況をログに記録する
+Log the current battery status
 ``` sh
 batterygraph write
 ```
 
-バッテリのグラフを見る
+View battery graph
 ``` sh
 batterygraph show
 ```
 
-launchd からアンロードする(ロギングを終了する)
+Unload from launchd (Stop logging)
 ``` sh
 batterygraph unload
 ```
 
-launchd での状況を確認する
+View the status at launchd
 ``` sh
 batterygraph status
 ```
 
 ## Uninstall
 
-終了しておく
+To be terminated beforehand
 ``` sh
 batterygraph unload
 ```
 
-実行ファイルのリンクを削除
+Delete symbolic link to batterygraph
 ``` sh
 unlink ~/.local/bin/batterygraph
 ```
 
-補完ファイルのリンクを削除
+Delete symbolic link to completion file
 ``` sh
 unlink /usr/local/share/zsh-completions/_batterygraph
 ```
 
-clone してきたディレクトリの削除
+Delete the repository
 ``` sh
-cd <cloneしてきたディレクトリ>
+cd <the directory when clone>
 rm -rf batterygraph
 ```
 
