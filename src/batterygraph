@@ -16,7 +16,6 @@ SCRIPT_DIR="$(abs_dirname "$0")"
 LABEL="motokii.batterylogger"
 PLIST_FILE="${SCRIPT_DIR}/plist/${LABEL}.plist"
 LOADED_PLIST_FILE="${HOME}/Library/LaunchAgents/${LABEL}.plist"
-LOG_FILE="${SCRIPT_DIR}/log/batterylog.csv"
 cd $SCRIPT_DIR
 
 function load {
@@ -41,7 +40,6 @@ function showgraph {
 }
 
 function writelog {
-  echo "writed >> ${LOG_FILE}"
   ruby ${SCRIPT_DIR}/logger/writelog.rb
 }
 

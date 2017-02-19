@@ -2,13 +2,13 @@
 require 'fileutils'
 
 class Logger
-  @@relative_file_dir = "../../log"
   @@file_name = "batterylog.csv"
 
 
   def initialize()
-    current_dir = File.expand_path(File.dirname(__FILE__)) #=> 実行中のスクリプトのパス
-    @@file_dir = File.expand_path(current_dir + '/' + @@relative_file_dir)
+    #current_dir = File.expand_path(File.dirname(__FILE__)) #=> 実行中のスクリプトのパス
+    @@file_dir = File.expand_path('~/.batterygraph')
+
     @@file_path = @@file_dir + '/' + @@file_name
   end
 
@@ -34,6 +34,7 @@ class Logger
 
   # 取得したデータをCSVファイルとして記録する
   def write_log
+    puts "writed >>" + @@file_path
     puts get_csv_row()
 
     # ディレクトリがなければ作成
