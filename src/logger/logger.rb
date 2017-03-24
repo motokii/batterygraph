@@ -19,6 +19,12 @@ class Logger
   # バッテリーのデータを取得
   def get_data
     ioreg = `/usr/sbin/ioreg -l`
+
+    # UTF-8に変換
+    if ! ioreg.valid_encoding?
+      ioreg = ioreg.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8')
+    end
+
     @capacity = ioreg.match(/"CurrentCapacity\D+(\d+)$/)[1]
     @cycle = ioreg.match(/"CycleCount\D+(\d+)$/)[1]
     @max = ioreg.match(/"MaxCapacity\D+(\d+)$/)[1]
